@@ -1,0 +1,33 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: library/postgres:9.6-alpine
+    ports:
+    - '5432:5432'
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB:  'fca_dev'
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  sftp:
+    image: atmoz/sftp
+    volumes:
+      - ~/www/fca/host/upload:/home/foo/upload
+      - ~/www/fca/host/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key \
+      - ~/www/fca/host/ssh_host_rsa_key:/etc/ssh/ssh_host_rsa_key \
+      - ~/www/fca/host/share:/home/foo/share \
+    ports:
+      - "2222:22"
+    command: foo:pass:1001

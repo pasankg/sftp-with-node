@@ -1,0 +1,6 @@
+/host/ssh_host_ed25519_key
+/host/ssh_host_rsa_key
+.idea
+package-lock.json
+init.sql
+node_modules
