@@ -1,5 +1,7 @@
 /host/ssh_host_ed25519_key
 /host/ssh_host_rsa_key
+/host/ssh_host_ed25519_key.pub
+/host/ssh_host_rsa_key.pub
 .idea
 package-lock.json
 init.sql
