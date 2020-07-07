@@ -24,10 +24,10 @@ services:
   sftp:
     image: atmoz/sftp
     volumes:
-      - ~/www/fca/host/upload:/home/foo/upload
-      - ~/www/fca/host/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key \
-      - ~/www/fca/host/ssh_host_rsa_key:/etc/ssh/ssh_host_rsa_key \
-      - ~/www/fca/host/share:/home/foo/share \
+      - ./fca/host/upload:/home/foo/upload
+      - ./fca/host/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key \
+      - ./fca/host/ssh_host_rsa_key:/etc/ssh/ssh_host_rsa_key \
+      - ./fca/host/share:/home/foo/share \
     ports:
       - "2222:22"
     command: foo:pass:1001

@@ -3,8 +3,8 @@
 // const csv = require('csv-parser');
 // const fs = require('fs');
 
-const Client = require('ssh2-sftp-client');
-const sftp = new Client();
+let Client = require('ssh2-sftp-client');
+let sftp = new Client();
 
 // const hostname = 'localhost';
 // const port = 3000;
@@ -44,7 +44,7 @@ fs.createReadStream('data.csv')
 /* Start sftp csv reader app*/
 sftp.connect({
     host: 'localhost',
-    port: '22',
+    port: '2222',
     username: 'foo',
     password: 'pass'
 }).then(() => {
